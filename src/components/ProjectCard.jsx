@@ -39,6 +39,11 @@ import posUI3 from '../assets/pos3.png';
 import posUI4 from '../assets/pos4.png';
 import posUI5 from '../assets/pos5.png';
 import posUI6 from '../assets/pos6.png';
+import reliefUI1 from '../assets/relief1.png';
+import reliefUI2 from '../assets/relief2.png';
+import reliefUI3 from '../assets/relief3.png';
+import reliefUI4 from '../assets/relief4.png';
+import reliefUI5 from '../assets/relief5.png';
 
 
 
@@ -76,7 +81,10 @@ function ProjectCard(props) {
             image: plusImage,
              description: 'Equal POS is a Windows-based billing software designed for efficient shop management. It enables easy creation of sales bills and sales return bills, supports counter closing, and integrates with thermal printers for seamless bill printing.',
               uiImages: [posUI1,posUI2,posUI3,posUI4,posUI5,posUI6] },
-        { name: 'Relief', image: reliefImage, description: 'It\'s a mobile app designed for delivery partners to efficiently track their assigned deliveries and navigate seamlessly to delivery locations.', uiImages: [] },
+        { name: 'Relief', 
+            image: reliefImage, 
+            description: 'It\'s a mobile app designed for delivery partners to efficiently track their assigned deliveries and navigate seamlessly to delivery locations.',
+             uiImages: [reliefUI1,reliefUI2,reliefUI3,reliefUI4,reliefUI5] },
         { name: 'Club', image: clubImage, description: 'Description for Club', uiImages: [] },
     ];
 
