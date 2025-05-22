@@ -19,7 +19,7 @@ function AboutmeCard(props) {
                     Experienced Software Engineer with a focus on Dart programming language and a specialization in mobile application development utilizing the Flutter framework. Certified MERN (MongoDB, Express.js, React.js, Node.js) Stack Developer with expertise in full-stack web development. Skilled in seamlessly integrating backend functionality through Firebase, demonstrating a deep understanding of RESTful APIs and proficiency in handling JSON data formats. Well-versed in version control systems like Git and GitHub, ensuring effective collaboration and streamlined code management.
                 </span>
             </div>
-            <h2 className='text-white px-4 sm:px-6 py-2 text-xl sm:text-2xl font-extrabold'>Certificate</h2>
+            <h2 className='text-white px-4 sm:px-6 py-2 text-xl sm:text-2xl font-extrabold'>Certification</h2>
             <div className='m-3 sm:m-5 grid grid-cols-1 sm:grid-cols-2 gap-2'>
                 <div
                     className="bg-[#282828] rounded-lg px-3 py-1.5 min-h-[8rem] sm:min-h-[10rem] w-full flex flex-row cursor-pointer hover:bg-[#383838] transition-colors"
