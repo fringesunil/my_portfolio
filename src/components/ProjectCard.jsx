@@ -44,6 +44,13 @@ import reliefUI2 from '../assets/relief2.png';
 import reliefUI3 from '../assets/relief3.png';
 import reliefUI4 from '../assets/relief4.png';
 import reliefUI5 from '../assets/relief5.png';
+import clubUI1 from '../assets/club1.png';
+import clubUI2 from '../assets/club2.png';
+import clubUI3 from '../assets/club3.png';
+import clubUI4 from '../assets/club4.png';
+import clubUI5 from '../assets/club5.png';
+import clubUI6 from '../assets/club6.png';
+import clubUI7 from '../assets/club7.png';
 
 
 
@@ -85,7 +92,10 @@ function ProjectCard(props) {
             image: reliefImage, 
             description: 'It\'s a mobile app designed for delivery partners to efficiently track their assigned deliveries and navigate seamlessly to delivery locations.',
              uiImages: [reliefUI1,reliefUI2,reliefUI3,reliefUI4,reliefUI5] },
-        { name: 'Club', image: clubImage, description: 'Description for Club', uiImages: [] },
+        { name: 'Club', 
+            image: clubImage, 
+            description: 'Club is a user-friendly mobile app designed for efficient club management. It enables receptionists to easily record guest visits, track event attendance, and monitor the maximum number of guests allowed per event. The app features customizable event scheduling and detailed attendance reports, providing club administrators with clear, data-driven insights. With its intuitive interface, Club streamlines operations and enhances the guest experience.',
+             uiImages: [clubUI1,clubUI2,clubUI3,clubUI4,clubUI5,clubUI6,clubUI7] },
     ];
 
     const handleCardClick = (project) => {
