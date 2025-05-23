@@ -53,6 +53,14 @@ function Root(props) {
                 <FaTwitter />
               </a>
             </div>
+            <div className="flex justify-center mt-2">
+              <button
+                onClick={() => window.open('https://drive.google.com/file/d/1QDhe5yDQMp33YoribhUlR7wz3duv8qSz/view?usp=sharing')}
+                className="bg-[#282828] text-gray-300 hover:text-cyan-400 text-sm sm:text-base font-medium px-4 py-2 rounded-[8px] transition-colors duration-200"
+              >
+                Resume
+              </button>
+            </div>
           </div>
         </div>
       </div>
