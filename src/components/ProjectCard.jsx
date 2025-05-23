@@ -57,6 +57,15 @@ import insight2 from '../assets/insight2.png';
 import insight3 from '../assets/insight3.png';
 import insight4 from '../assets/insight4.png';
 import insight5 from '../assets/insight5.png';
+import partner1 from '../assets/partner1.png';
+import partner2 from '../assets/partner2.png';
+import partner3 from '../assets/partner3.png';
+import partner4 from '../assets/partner4.png';
+import partner5 from '../assets/partner5.png';
+import partner6 from '../assets/partner6.png';
+import partner7 from '../assets/partner7.png';
+import partner8 from '../assets/partner8.png';
+import partner9 from '../assets/partner9.png';
 
 
 
@@ -79,7 +88,12 @@ function ProjectCard(props) {
             description: 'Developing a comprehensive hotel booking application that provides users with a seamless and convenient experience for searching, booking, and managing hotel reservations. The app incorporates advanced search filters, real-time availability updates, secure payment integration, and personalized recommendations to enhance the user\'s hotel booking journey.',
             uiImages: [hotayaUI1,hotayaUI2,hotayaUI3,hotayaUI4,hotayaUI5,hotayaUI6,hotayaUI7,hotayaUI8,]
         },
-        
+         {
+            name: 'Hotaya-Partner',
+            image: hotayaImage,
+            description: 'Hotaya Partner App: Streamline your property management with Hotaya, an all-in-one platform for listing hotels, apartments, and properties for booking. Offer guests a seamless reservation experience with real-time availability, secure payments, and detailed listings. Featuring personalized recommendations, interactive maps, and 24/7 support, Hotaya connects property owners with travelers worldwide, ensuring hassle-free bookings and memorable stays.',
+            uiImages: [partner1,partner2,partner3,partner4,partner5,partner6,partner7,partner8,partner9]
+        },
         {
             name: 'Coyna',
             image: coynaImage,
