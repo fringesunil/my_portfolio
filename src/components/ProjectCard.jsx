@@ -51,6 +51,12 @@ import clubUI4 from '../assets/club4.png';
 import clubUI5 from '../assets/club5.png';
 import clubUI6 from '../assets/club6.png';
 import clubUI7 from '../assets/club7.png';
+import insight from '../assets/insight.png';
+import insight1 from '../assets/insight1.png';
+import insight2 from '../assets/insight2.png';
+import insight3 from '../assets/insight3.png';
+import insight4 from '../assets/insight4.png';
+import insight5 from '../assets/insight5.png';
 
 
 
@@ -96,6 +102,10 @@ function ProjectCard(props) {
             image: clubImage, 
             description: 'Club is a user-friendly mobile app designed for efficient club management. It enables receptionists to easily record guest visits, track event attendance, and monitor the maximum number of guests allowed per event. The app features customizable event scheduling and detailed attendance reports, providing club administrators with clear, data-driven insights. With its intuitive interface, Club streamlines operations and enhances the guest experience.',
              uiImages: [clubUI1,clubUI2,clubUI3,clubUI4,clubUI5,clubUI6,clubUI7] },
+             { name: 'Insight-Pro', 
+            image: insight, 
+            description: 'Insight Pro: A powerful business management tool delivering real-time insights for multi-branch operations. Monitor live sales, inventory, expenses, and branch performance through an intuitive financial dashboard. Access comprehensive data, transaction history, and secure remote monitoring anytime, anywhere, empowering informed decision-making.',
+             uiImages: [insight1,insight2,insight3,insight4,insight5] },
     ];
 
     const handleCardClick = (project) => {
