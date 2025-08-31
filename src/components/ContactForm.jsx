@@ -25,7 +25,7 @@ function ContactForm(props) {
     setStatus('Sending...');
 
    
-    const serviceId = 'service_cqfzl9s'; 
+    const serviceId = 'service_fev3xlh'; 
     const templateId = 'template_v3wbcwr'; 
     const publicKey = 'OHM7ywNweUQODFFED'; 
 
