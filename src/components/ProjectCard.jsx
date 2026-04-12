@@ -66,6 +66,26 @@ import partner6 from '../assets/partner6.png';
 import partner7 from '../assets/partner7.png';
 import partner8 from '../assets/partner8.png';
 import partner9 from '../assets/partner9.png';
+import Eqserv from '../assets/Eqserv.png';
+import Eqserv1 from '../assets/Eqserv1.png';
+import Eqserv2 from '../assets/Eqserv2.png';
+import Eqserv3 from '../assets/Eqserv3.png';
+import Eqserv4 from '../assets/Eqserv4.png';
+import Eqserv5 from '../assets/Eqserv5.png';
+import Eqserv6 from '../assets/Eqserv6.png';
+import Eqserv7 from '../assets/Eqserv7.png';
+import Eqserv8 from '../assets/Eqserv8.png';
+import Eqserv9 from '../assets/Eqserv9.png';
+import Eqserv10 from '../assets/Eqserv10.png';
+import Beauty from '../assets/beauty.png';
+import Beauty1 from '../assets/beauty1.png';
+import Beauty2 from '../assets/beauty2.png';
+import Beauty3 from '../assets/beauty3.png';
+import Beauty4 from '../assets/beauty4.png';
+import Beauty5 from '../assets/beauty5.png';
+import Beauty6 from '../assets/beauty6.png';
+import Beauty7 from '../assets/beauty7.png';
+
 
 
 
@@ -116,10 +136,18 @@ function ProjectCard(props) {
             image: clubImage, 
             description: 'Club is a user-friendly mobile app designed for efficient club management. It enables receptionists to easily record guest visits, track event attendance, and monitor the maximum number of guests allowed per event. The app features customizable event scheduling and detailed attendance reports, providing club administrators with clear, data-driven insights. With its intuitive interface, Club streamlines operations and enhances the guest experience.',
              uiImages: [clubUI1,clubUI2,clubUI3,clubUI4,clubUI5,clubUI6,clubUI7] },
-             { name: 'Insight-Pro', 
+        { name: 'Insight-Pro', 
             image: insight, 
             description: 'Insight Pro: A powerful business management tool delivering real-time insights for multi-branch operations. Monitor live sales, inventory, expenses, and branch performance through an intuitive financial dashboard. Access comprehensive data, transaction history, and secure remote monitoring anytime, anywhere, empowering informed decision-making.',
              uiImages: [insight1,insight2,insight3,insight4,insight5] },
+         { name: 'Equal Serve', 
+            image: Eqserv, 
+            description: 'Equal Serve is a comprehensive mobile solution designed specifically for laundry collection representatives to streamline the order management and item tracking process. The application enables field staff to generate digital job cards instantly during doorstep pickups, ensuring that every garment is accurately recorded and tracked to prevent any loss of customer items. Beyond collection, the app simplifies financial management by allowing representatives to generate bills, monitor transaction histories, and keep a precise record of outstanding balances in real time. By bridging the gap between field operations and the main facility, Equal Serve empowers laundry businesses with a secure, intuitive tool for maintaining accountability and enhancing customer trust.',
+             uiImages: [Eqserv1,Eqserv2,Eqserv3,Eqserv4,Eqserv5,Eqserv6,Eqserv7,Eqserv8,Eqserv9,Eqserv10] },
+         { name: 'Beauty Sync', 
+            image: Beauty, 
+            description: 'Beauty Sync is an all-in-one salon management and appointment booking app designed for beauty businesses. It helps salons manage bookings, customers, staff, services, and billing in one simple platform. With an easy-to-use interface, real-time appointment tracking, and smart business insights,Beauty Sync streamlines daily salon operations and improves customer experience.',
+             uiImages: [Beauty1,Beauty2,Beauty3,Beauty4,Beauty5,Beauty6,Beauty7] },
     ];
 
     const handleCardClick = (project) => {
