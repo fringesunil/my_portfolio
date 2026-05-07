@@ -3,9 +3,15 @@ import React from 'react';
 function ExperienceCard(props) {
     const experiences = [
         {
+            role: "Flutter Developer | Senior Officer (B2)",
+            company: "GramPro Business Services Pvt. Ltd",
+            period: "May 2026 — Present",
+            description: ""
+        },
+        {
             role: "Flutter Developer",
             company: "EqSoft Business Solution Pvt. Ltd",
-            period: "Jan 2024 — Present",
+            period: "Jan 2024 — Apr 2026",
             description: ""
         },
         {
@@ -29,15 +35,15 @@ function ExperienceCard(props) {
     ];
 
     return (
-        <div>
+        <div className="h-full overflow-y-auto rounded-[16px] custom-scrollbar">
             <h1 className='text-white px-4 sm:px-6 py-4 text-2xl sm:text-3xl font-extrabold'>Experience</h1>
             <div className="mb-8 sm:mb-12">
                 <div className="relative px-4 sm:px-6">
                     {experiences.map((exp, index) => (
-                        <div key={index} className="mb-6 sm:mb-8 relative pl-6 sm:pl-8">
-                            <div className="absolute left-0 top-2 w-2 sm:w-3 h-2 sm:h-3 bg-cyan-400 rounded-full"></div>
+                        <div key={index} className="pb-6 sm:pb-8 relative pl-6 sm:pl-8">
+                            <div className="absolute left-0 top-2 w-2 sm:w-3 h-2 sm:h-3 bg-cyan-400 rounded-full z-10"></div>
                             {index !== experiences.length - 1 && (
-                                <div className="absolute left-1 sm:left-1.5 top-4 w-0.5 h-full bg-gray-700 -translate-x-1/2"></div>
+                                <div className="absolute left-1 sm:left-1.5 top-4 w-0.5 h-full bg-gray-700 -translate-x-1/2 z-0"></div>
                             )}
                             <div>
                                 <h3 className="text-lg sm:text-xl font-semibold text-white">{exp.role}</h3>
