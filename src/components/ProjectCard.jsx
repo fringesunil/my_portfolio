@@ -144,9 +144,9 @@ function ProjectCard(props) {
             image: Eqserv, 
             description: 'Equal Serve is a comprehensive mobile solution designed specifically for laundry collection representatives to streamline the order management and item tracking process. The application enables field staff to generate digital job cards instantly during doorstep pickups, ensuring that every garment is accurately recorded and tracked to prevent any loss of customer items. Beyond collection, the app simplifies financial management by allowing representatives to generate bills, monitor transaction histories, and keep a precise record of outstanding balances in real time. By bridging the gap between field operations and the main facility, Equal Serve empowers laundry businesses with a secure, intuitive tool for maintaining accountability and enhancing customer trust.',
              uiImages: [Eqserv1,Eqserv2,Eqserv3,Eqserv4,Eqserv5,Eqserv6,Eqserv7,Eqserv8,Eqserv9,Eqserv10] },
-         { name: 'Beauty Sync', 
+         { name: 'Beauty Salon', 
             image: Beauty, 
-            description: 'Beauty Sync is an all-in-one salon management and appointment booking app designed for beauty businesses. It helps salons manage bookings, customers, staff, services, and billing in one simple platform. With an easy-to-use interface, real-time appointment tracking, and smart business insights,Beauty Sync streamlines daily salon operations and improves customer experience.',
+            description: 'Beauty Salon is an all-in-one salon management and appointment booking app designed for beauty businesses. It helps salons manage bookings, customers, staff, services, and billing in one simple platform. With an easy-to-use interface, real-time appointment tracking, and smart business insights,Beauty Salon streamlines daily salon operations and improves customer experience.',
              uiImages: [Beauty1,Beauty2,Beauty3,Beauty4,Beauty5,Beauty6,Beauty7] },
     ];
 
