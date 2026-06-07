@@ -3,7 +3,7 @@ import React from 'react';
 function ExperienceCard(props) {
     const experiences = [
         {
-            role: "Flutter Developer | Senior Officer (B2)",
+            role: "Software Engineer II (Flutter)",
             company: "GramPro Business Services Pvt. Ltd",
             period: "May 2026 — Present",
             description: ""
