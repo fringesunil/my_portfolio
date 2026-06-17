@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaGooglePlay, FaApple } from 'react-icons/fa';
 import metaConsultImage from '../assets/logo.png';
 import hotayaImage from '../assets/hotayalogo.png';
 import coynaImage from '../assets/coyna.png';
@@ -100,54 +101,76 @@ function ProjectCard(props) {
             name: 'MetaConsult',
             image: metaConsultImage,
             description: 'Developing mobile and web applications that serve as a bridge between doctors and patients, enhancing communication and empowering doctors to establish their digital presence. The applications enable seamless appointment scheduling, secure messaging, and easy access to medical records, all while maintaining the doctor\'s individual identity and privacy.',
-            uiImages: [metaConsultUI1, metaConsultUI2, metaConsultUI3, metaConsultUI4, metaConsultUI5, metaConsultUI6, metaConsultUI7, metaConsultUI8]
+            uiImages: [metaConsultUI1, metaConsultUI2, metaConsultUI3, metaConsultUI4, metaConsultUI5, metaConsultUI6, metaConsultUI7, metaConsultUI8],
+            playStore: 'https://play.google.com/store/apps/details?id=com.metaconsult',
         },
         {
             name: 'Hotaya',
             image: hotayaImage,
             description: 'Developing a comprehensive hotel booking application that provides users with a seamless and convenient experience for searching, booking, and managing hotel reservations. The app incorporates advanced search filters, real-time availability updates, secure payment integration, and personalized recommendations to enhance the user\'s hotel booking journey.',
-            uiImages: [hotayaUI1,hotayaUI2,hotayaUI3,hotayaUI4,hotayaUI5,hotayaUI6,hotayaUI7,hotayaUI8,]
+            uiImages: [hotayaUI1, hotayaUI2, hotayaUI3, hotayaUI4, hotayaUI5, hotayaUI6, hotayaUI7, hotayaUI8,],
+            playStore: 'https://play.google.com/store/apps/details?id=com.app.hotaya',
         },
-         {
+        {
             name: 'Hotaya-Partner',
             image: hotayaImage,
             description: 'Hotaya Partner App: Streamline your property management with Hotaya, an all-in-one platform for listing hotels, apartments, and properties for booking. Offer guests a seamless reservation experience with real-time availability, secure payments, and detailed listings. Featuring personalized recommendations, interactive maps, and 24/7 support, Hotaya connects property owners with travelers worldwide, ensuring hassle-free bookings and memorable stays.',
-            uiImages: [partner1,partner2,partner3,partner4,partner5,partner6,partner7,partner8,partner9]
+            uiImages: [partner1, partner2, partner3, partner4, partner5, partner6, partner7, partner8, partner9],
+            playStore: 'https://play.google.com/store/apps/details?id=com.hotaya.partner',
+            appStore: 'https://apps.apple.com/ua/app/hotaya-partner/id6467189108'
         },
         {
             name: 'Coyna',
             image: coynaImage,
             description: 'It\'s comprehensive Payment Mobile App that provides users can send or receive payments globally',
-            uiImages: [coynaUI1,coynaUI2,coynaUI3,coynaUI4,coynaUI5]
+            uiImages: [coynaUI1, coynaUI2, coynaUI3, coynaUI4, coynaUI5]
         },
-        { name: 'Equal Plus', 
-            image: plusImage, 
-            description: 'Equal Plus is a user-friendly mobile app designed to simplify billing for your shop. Effortlessly create quotations, sale return bills, and manage stock inventory. Generate bills anytime, anywhere without the need for a laptop. Easily share professional invoice PDFs via email or WhatsApp.',
-             uiImages: [plusUI1,plusUI2,plusUI3,plusUI4,plusUI5,plusUI6,plusUI7] },
-        { name: 'Equal POS', 
+        {
+            name: 'Equal Plus',
             image: plusImage,
-             description: 'Equal POS is a Windows-based billing software designed for efficient shop management. It enables easy creation of sales bills and sales return bills, supports counter closing, and integrates with thermal printers for seamless bill printing.',
-              uiImages: [posUI1,posUI2,posUI3,posUI4,posUI5,posUI6] },
-        { name: 'Relief', 
-            image: reliefImage, 
+            description: 'Equal Plus is a user-friendly mobile app designed to simplify billing for your shop. Effortlessly create quotations, sale return bills, and manage stock inventory. Generate bills anytime, anywhere without the need for a laptop. Easily share professional invoice PDFs via email or WhatsApp.',
+            uiImages: [plusUI1, plusUI2, plusUI3, plusUI4, plusUI5, plusUI6, plusUI7],
+             playStore: 'https://play.google.com/store/apps/details?id=com.eqsoftonline.equalplus&hl=en_IN',
+        },
+        {
+            name: 'Equal POS',
+            image: plusImage,
+            description: 'Equal POS is a Windows-based billing software designed for efficient shop management. It enables easy creation of sales bills and sales return bills, supports counter closing, and integrates with thermal printers for seamless bill printing.',
+            uiImages: [posUI1, posUI2, posUI3, posUI4, posUI5, posUI6]
+        },
+        {
+            name: 'Relief',
+            image: reliefImage,
             description: 'It\'s a mobile app designed for delivery partners to efficiently track their assigned deliveries and navigate seamlessly to delivery locations.',
-             uiImages: [reliefUI1,reliefUI2,reliefUI3,reliefUI4,reliefUI5] },
-        { name: 'Club', 
-            image: clubImage, 
+            uiImages: [reliefUI1, reliefUI2, reliefUI3, reliefUI4, reliefUI5]
+        },
+        {
+            name: 'Club',
+            image: clubImage,
             description: 'Club is a user-friendly mobile app designed for efficient club management. It enables receptionists to easily record guest visits, track event attendance, and monitor the maximum number of guests allowed per event. The app features customizable event scheduling and detailed attendance reports, providing club administrators with clear, data-driven insights. With its intuitive interface, Club streamlines operations and enhances the guest experience.',
-             uiImages: [clubUI1,clubUI2,clubUI3,clubUI4,clubUI5,clubUI6,clubUI7] },
-        { name: 'Insight-Pro', 
-            image: insight, 
+            uiImages: [clubUI1, clubUI2, clubUI3, clubUI4, clubUI5, clubUI6, clubUI7]
+        },
+        {
+            name: 'Insight-Pro',
+            image: insight,
             description: 'Insight Pro: A powerful business management tool delivering real-time insights for multi-branch operations. Monitor live sales, inventory, expenses, and branch performance through an intuitive financial dashboard. Access comprehensive data, transaction history, and secure remote monitoring anytime, anywhere, empowering informed decision-making.',
-             uiImages: [insight1,insight2,insight3,insight4,insight5] },
-         { name: 'Equal Serve', 
-            image: Eqserv, 
+            uiImages: [insight1, insight2, insight3, insight4, insight5],
+             playStore: 'https://play.google.com/store/apps/details?id=com.eqsoftonline.live_app&hl=en_IN',
+        },
+        {
+            name: 'Equal Serve',
+            image: Eqserv,
             description: 'Equal Serve is a comprehensive mobile solution designed specifically for laundry collection representatives to streamline the order management and item tracking process. The application enables field staff to generate digital job cards instantly during doorstep pickups, ensuring that every garment is accurately recorded and tracked to prevent any loss of customer items. Beyond collection, the app simplifies financial management by allowing representatives to generate bills, monitor transaction histories, and keep a precise record of outstanding balances in real time. By bridging the gap between field operations and the main facility, Equal Serve empowers laundry businesses with a secure, intuitive tool for maintaining accountability and enhancing customer trust.',
-             uiImages: [Eqserv1,Eqserv2,Eqserv3,Eqserv4,Eqserv5,Eqserv6,Eqserv7,Eqserv8,Eqserv9,Eqserv10] },
-         { name: 'Beauty Salon', 
-            image: Beauty, 
+            uiImages: [Eqserv1, Eqserv2, Eqserv3, Eqserv4, Eqserv5, Eqserv6, Eqserv7, Eqserv8, Eqserv9, Eqserv10]
+        },
+        {
+            name: 'Beauty Salon',
+            image: Beauty,
             description: 'Beauty Salon is an all-in-one salon management and appointment booking app designed for beauty businesses. It helps salons manage bookings, customers, staff, services, and billing in one simple platform. With an easy-to-use interface, real-time appointment tracking, and smart business insights,Beauty Salon streamlines daily salon operations and improves customer experience.',
-             uiImages: [Beauty1,Beauty2,Beauty3,Beauty4,Beauty5,Beauty6,Beauty7] },
+            uiImages: [Beauty1, Beauty2, Beauty3, Beauty4, Beauty5, Beauty6, Beauty7],
+              playStore: 'https://play.google.com/store/apps/details?id=com.eqsoftonline.beautysync&hl=en_IN',
+            appStore: 'https://apps.apple.com/in/app/beauty-sync-eqsoft/id6764538165'
+        },
     ];
 
     const handleCardClick = (project) => {
@@ -207,7 +230,35 @@ function ProjectCard(props) {
                 <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
                     <div className="bg-[#282828] p-4 sm:p-6 rounded-lg w-[90%] sm:w-[60rem] h-auto sm:h-[40rem] mx-4 overflow-y-auto custom-scrollbar">
                         <div className="flex justify-between items-center mb-4">
-                            <h2 className="text-lg sm:text-xl font-bold text-white">{selectedProject?.name}</h2>
+                            <div className="flex items-center gap-3">
+                                <h2 className="text-lg sm:text-xl font-bold text-white">{selectedProject?.name}</h2>
+                                {(selectedProject?.playStore || selectedProject?.appStore) && (
+                                    <div className="flex items-center gap-2.5 ml-2">
+                                        {selectedProject?.playStore && (
+                                            <a
+                                                href={selectedProject.playStore}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-green-500 hover:text-green-400 p-1 transition-colors flex items-center"
+                                                title="Play Store"
+                                            >
+                                                <FaGooglePlay className="text-lg sm:text-xl" />
+                                            </a>
+                                        )}
+                                        {selectedProject?.appStore && (
+                                            <a
+                                                href={selectedProject.appStore}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-white hover:text-gray-300 p-1 transition-colors flex items-center"
+                                                title="App Store"
+                                            >
+                                                <FaApple className="text-lg sm:text-xl" />
+                                            </a>
+                                        )}
+                                    </div>
+                                )}
+                            </div>
                             <button
                                 onClick={handleCloseDialog}
                                 className="text-white hover:text-gray-300 text-xl sm:text-2xl"
