@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { FaGooglePlay, FaApple } from 'react-icons/fa';
+import React, { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
+import { FaGooglePlay, FaApple, FaChevronLeft, FaChevronRight, FaTimes, FaExternalLinkAlt, FaLayerGroup } from 'react-icons/fa';
 import metaConsultImage from '../assets/logo.png';
 import hotayaImage from '../assets/hotayalogo.png';
 import coynaImage from '../assets/coyna.png';
@@ -130,7 +131,7 @@ function ProjectCard(props) {
             image: plusImage,
             description: 'Equal Plus is a user-friendly mobile app designed to simplify billing for your shop. Effortlessly create quotations, sale return bills, and manage stock inventory. Generate bills anytime, anywhere without the need for a laptop. Easily share professional invoice PDFs via email or WhatsApp.',
             uiImages: [plusUI1, plusUI2, plusUI3, plusUI4, plusUI5, plusUI6, plusUI7],
-             playStore: 'https://play.google.com/store/apps/details?id=com.eqsoftonline.equalplus&hl=en_IN',
+            playStore: 'https://play.google.com/store/apps/details?id=com.eqsoftonline.equalplus&hl=en_IN',
         },
         {
             name: 'Equal POS',
@@ -155,7 +156,7 @@ function ProjectCard(props) {
             image: insight,
             description: 'Insight Pro: A powerful business management tool delivering real-time insights for multi-branch operations. Monitor live sales, inventory, expenses, and branch performance through an intuitive financial dashboard. Access comprehensive data, transaction history, and secure remote monitoring anytime, anywhere, empowering informed decision-making.',
             uiImages: [insight1, insight2, insight3, insight4, insight5],
-             playStore: 'https://play.google.com/store/apps/details?id=com.eqsoftonline.live_app&hl=en_IN',
+            playStore: 'https://play.google.com/store/apps/details?id=com.eqsoftonline.live_app&hl=en_IN',
         },
         {
             name: 'Equal Serve',
@@ -168,10 +169,26 @@ function ProjectCard(props) {
             image: Beauty,
             description: 'Beauty Salon is an all-in-one salon management and appointment booking app designed for beauty businesses. It helps salons manage bookings, customers, staff, services, and billing in one simple platform. With an easy-to-use interface, real-time appointment tracking, and smart business insights,Beauty Salon streamlines daily salon operations and improves customer experience.',
             uiImages: [Beauty1, Beauty2, Beauty3, Beauty4, Beauty5, Beauty6, Beauty7],
-              playStore: 'https://play.google.com/store/apps/details?id=com.eqsoftonline.beautysync&hl=en_IN',
+            playStore: 'https://play.google.com/store/apps/details?id=com.eqsoftonline.beautysync&hl=en_IN',
             appStore: 'https://apps.apple.com/in/app/beauty-sync-eqsoft/id6764538165'
         },
     ];
+
+    const modalRef = useRef(null);
+
+    useEffect(() => {
+        if (isDialogOpen) {
+            document.body.style.overflow = 'hidden';
+            if (modalRef.current) {
+                modalRef.current.scrollTop = 0;
+            }
+        } else {
+            document.body.style.overflow = '';
+        }
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [isDialogOpen]);
 
     const handleCardClick = (project) => {
         setSelectedProject(project);
@@ -201,115 +218,181 @@ function ProjectCard(props) {
     };
 
     return (
-        <div>
-            <h1 className='text-white px-4 sm:px-6 py-4 text-2xl sm:text-3xl font-extrabold'>Projects</h1>
-            <div className="p-4 sm:p-6">
-                <div className="max-w-full mx-auto h-[380px] sm:h-[430px] overflow-y-auto custom-scrollbar">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-                        {projects.map((project, index) => (
-                            <div
-                                key={index}
-                                className="bg-[#282828] rounded-lg shadow-md overflow-hidden cursor-pointer hover:bg-[#383838] transition-colors"
-                                onClick={() => handleCardClick(project)}
-                            >
-                                <img
-                                    src={project.image}
-                                    alt={`${project.name} logo`}
-                                    className="w-full h-20 sm:h-24 py-1.5 object-contain"
-                                />
-                                <div className="p-3 sm:p-4">
-                                    <h3 className="text-base sm:text-lg font-bold text-white text-center">{project.name}</h3>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+        <div className="space-y-8 animate-fadeIn">
+            {/* Header Section */}
+            <div>
+                <div className="flex items-center gap-3 mb-2">
+                    <span className="h-8 w-1.5 bg-gradient-to-b from-cyan-400 to-blue-600 rounded-full" />
+                    <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Featured Projects</h1>
                 </div>
+                <p className="text-xs sm:text-sm text-cyan-400 font-medium pl-4">Showcase of mobile applications</p>
             </div>
 
-            {isDialogOpen && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-                    <div className="bg-[#282828] p-4 sm:p-6 rounded-lg w-[90%] sm:w-[60rem] h-auto sm:h-[40rem] mx-4 overflow-y-auto custom-scrollbar">
-                        <div className="flex justify-between items-center mb-4">
-                            <div className="flex items-center gap-3">
-                                <h2 className="text-lg sm:text-xl font-bold text-white">{selectedProject?.name}</h2>
-                                {(selectedProject?.playStore || selectedProject?.appStore) && (
-                                    <div className="flex items-center gap-2.5 ml-2">
-                                        {selectedProject?.playStore && (
+            {/* Projects Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 sm:gap-6">
+                {projects.map((project, index) => (
+                    <div
+                        key={index}
+                        className="glass-card-hover rounded-2xl border border-white/10 bg-slate-900/60 overflow-hidden cursor-pointer group flex flex-col justify-between p-4 relative"
+                        onClick={() => handleCardClick(project)}
+                    >
+                        {/* Store Badge Indicators */}
+                        <div className="flex items-center justify-between gap-2 mb-3">
+                            <span className="text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                                {project.appStore ? 'iOS & Android' : 'Flutter App'}
+                            </span>
+                            <div className="flex items-center gap-1 text-slate-400">
+                                {project.playStore && <FaGooglePlay className="text-xs hover:text-emerald-400 transition-colors" />}
+                                {project.appStore && <FaApple className="text-xs hover:text-white transition-colors" />}
+                            </div>
+                        </div>
+
+                        {/* Image Logo Container */}
+                        <div className="w-full h-28 sm:h-32 2xl:h-36 rounded-xl bg-slate-950/60 border border-white/5 p-3 flex items-center justify-center group-hover:border-cyan-500/30 transition-colors my-2">
+                            <img
+                                src={project.image}
+                                alt={`${project.name} logo`}
+                                className="max-w-full max-h-full object-contain filter group-hover:brightness-110 transition-all duration-300"
+                            />
+                        </div>
+
+                        {/* Title & Click Prompt */}
+                        <div className="pt-2 flex items-center justify-between">
+                            <h3 className="text-base 2xl:text-lg font-bold text-slate-100 group-hover:text-cyan-300 transition-colors">
+                                {project.name}
+                            </h3>
+                            <span className="text-xs text-cyan-400 font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                View Details &rarr;
+                            </span>
+                        </div>
+                    </div>
+                ))}
+            </div>
+
+            {/* Lightbox Dialog Modal via React Portal */}
+            {isDialogOpen && selectedProject && createPortal(
+                <div className="fixed inset-0 bg-slate-950/85 backdrop-blur-md flex items-start sm:items-center justify-center z-[9999] p-2 pt-3 sm:p-6 2xl:p-10 animate-fadeIn">
+                    <div ref={modalRef} className="glass-card rounded-2xl border border-white/10 bg-slate-900/95 w-full max-w-4xl xl:max-w-5xl 2xl:max-w-6xl max-h-[94vh] sm:max-h-[92vh] overflow-y-auto custom-scrollbar p-3.5 sm:p-7 2xl:p-9 shadow-2xl relative space-y-3.5 sm:space-y-6">
+
+                        {/* Modal Header */}
+                        <div className="flex items-center justify-between gap-3 border-b border-white/10 pb-3">
+                            <div className="min-w-0 flex-1">
+                                <div className="flex flex-wrap items-center gap-2">
+                                    <h2 className="text-lg sm:text-2xl 2xl:text-3xl font-extrabold text-white truncate">{selectedProject.name}</h2>
+
+                                    {/* Store Direct Links */}
+                                    <div className="flex items-center gap-1.5 shrink-0">
+                                        {selectedProject.playStore && (
                                             <a
                                                 href={selectedProject.playStore}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="text-green-500 hover:text-green-400 p-1 transition-colors flex items-center"
-                                                title="Play Store"
+                                                className="px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg sm:rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[11px] sm:text-xs 2xl:text-sm font-semibold hover:bg-emerald-500/20 transition-colors flex items-center gap-1"
+                                                title="Open Play Store"
                                             >
-                                                <FaGooglePlay className="text-lg sm:text-xl" />
+                                                <FaGooglePlay className="text-[10px] sm:text-xs" />
+                                                <span className="hidden xs:inline sm:inline">Play Store</span>
                                             </a>
                                         )}
-                                        {selectedProject?.appStore && (
+                                        {selectedProject.appStore && (
                                             <a
                                                 href={selectedProject.appStore}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="text-white hover:text-gray-300 p-1 transition-colors flex items-center"
-                                                title="App Store"
+                                                className="px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg sm:rounded-xl bg-white/10 border border-white/20 text-white text-[11px] sm:text-xs 2xl:text-sm font-semibold hover:bg-white/20 transition-colors flex items-center gap-1"
+                                                title="Open App Store"
                                             >
-                                                <FaApple className="text-lg sm:text-xl" />
+                                                <FaApple className="text-[10px] sm:text-xs" />
+                                                <span className="hidden xs:inline sm:inline">App Store</span>
                                             </a>
                                         )}
                                     </div>
-                                )}
+                                </div>
                             </div>
+
+                            {/* Close Button */}
                             <button
                                 onClick={handleCloseDialog}
-                                className="text-white hover:text-gray-300 text-xl sm:text-2xl"
+                                className="p-1.5 sm:p-2 rounded-xl bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700 transition-colors shrink-0"
+                                title="Close modal"
                             >
-                                ×
+                                <FaTimes className="text-sm sm:text-base 2xl:text-lg" />
                             </button>
                         </div>
-                        <div className='flex flex-col sm:flex-row gap-4'>
-                            <img
-                                src={selectedProject?.image}
-                                alt={`${selectedProject?.name} logo`}
-                                className="w-full sm:w-1/3 h-24 sm:h-32 object-contain mb-4"
-                            />
-                            <p className="text-white text-sm sm:text-base mb-4">{selectedProject?.description}</p>
+
+                        {/* Logo & Description Container */}
+                        <div className="flex gap-3 sm:gap-5 items-start bg-slate-950/60 p-3 sm:p-4 2xl:p-6 rounded-xl border border-white/5">
+                            <div className="w-14 h-14 sm:w-36 2xl:w-44 sm:h-28 2xl:h-36 shrink-0 rounded-xl bg-slate-900 p-2 sm:p-3 border border-white/10 flex items-center justify-center">
+                                <img
+                                    src={selectedProject.image}
+                                    alt={`${selectedProject.name} logo`}
+                                    className="max-w-full max-h-full object-contain"
+                                />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                                <p className="text-slate-300 text-xs sm:text-sm 2xl:text-base leading-snug sm:leading-relaxed">
+                                    {selectedProject.description}
+                                </p>
+                            </div>
                         </div>
 
-                        {selectedProject?.uiImages.length > 0 ? (
-                            <div className="relative">
-                                <div className="w-full h-[20rem] sm:h-[28rem] overflow-hidden rounded-lg">
+                        {/* UI Screenshots Slideshow Carousel */}
+                        {selectedProject.uiImages && selectedProject.uiImages.length > 0 ? (
+                            <div className="space-y-2 sm:space-y-3">
+                                <div className="flex items-center justify-between text-xs 2xl:text-sm font-semibold text-slate-400">
+                                    <span>UI Screenshots</span>
+                                    <span className="text-cyan-400 font-bold">{currentSlide + 1} / {selectedProject.uiImages.length}</span>
+                                </div>
+
+                                <div className="relative w-full h-[210px] sm:h-[380px] xl:h-[460px] 2xl:h-[520px] bg-slate-950 rounded-xl border border-white/10 overflow-hidden flex items-center justify-center p-1.5 sm:p-2">
                                     <img
                                         src={selectedProject.uiImages[currentSlide]}
                                         alt={`${selectedProject.name} UI ${currentSlide + 1}`}
-                                        className="w-full h-full object-contain"
+                                        className="max-w-full max-h-full object-contain rounded-lg"
                                     />
+
+                                    {/* Left / Right Nav Arrows */}
+                                    <button
+                                        onClick={prevSlide}
+                                        className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 p-2 sm:p-3 rounded-full bg-slate-900/85 border border-white/10 text-white hover:bg-cyan-500 hover:text-slate-950 transition-all shadow-lg"
+                                        title="Previous image"
+                                    >
+                                        <FaChevronLeft className="text-[10px] sm:text-xs" />
+                                    </button>
+                                    <button
+                                        onClick={nextSlide}
+                                        className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 p-2 sm:p-3 rounded-full bg-slate-900/85 border border-white/10 text-white hover:bg-cyan-500 hover:text-slate-950 transition-all shadow-lg"
+                                        title="Next image"
+                                    >
+                                        <FaChevronRight className="text-[10px] sm:text-xs" />
+                                    </button>
                                 </div>
-                                <button
-                                    onClick={prevSlide}
-                                    className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full opacity-75 hover:opacity-100"
-                                >
-                                    &#8249;
-                                </button>
-                                <button
-                                    onClick={nextSlide}
-                                    className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full opacity-75 hover:opacity-100"
-                                >
-                                    &#8250;
-                                </button>
-                                <div className="flex justify-center mt-2 gap-2">
-                                    {selectedProject.uiImages.map((_, index) => (
-                                        <div
-                                            key={index}
-                                            className={`w-2 h-2 rounded-full ${currentSlide === index ? 'bg-white' : 'bg-gray-500'}`}
-                                        />
+
+                                {/* Thumbnail Strip */}
+                                <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto custom-scrollbar py-1">
+                                    {selectedProject.uiImages.map((img, idx) => (
+                                        <button
+                                            key={idx}
+                                            onClick={() => setCurrentSlide(idx)}
+                                            className={`w-11 h-11 sm:w-14 sm:h-14 shrink-0 rounded-lg overflow-hidden border-2 transition-all ${currentSlide === idx
+                                                ? 'border-cyan-400 ring-2 ring-cyan-400/40 opacity-100 scale-105'
+                                                : 'border-transparent opacity-50 hover:opacity-100'
+                                                }`}
+                                        >
+                                            <img
+                                                src={img}
+                                                alt={`Thumb ${idx + 1}`}
+                                                className="w-full h-full object-cover"
+                                            />
+                                        </button>
                                     ))}
                                 </div>
                             </div>
-                        ) : (
-                            <p className="text-white text-sm sm:text-base">No UI images available</p>
-                        )}
+                        ) : null}
+
                     </div>
-                </div>
+                </div>,
+                document.body
             )}
         </div>
     );
