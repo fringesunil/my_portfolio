@@ -108,13 +108,15 @@ function Root(props) {
 
           {/* Resume CTA Button */}
           <div className="w-full mt-6">
-            <button
-              onClick={() => window.open('https://drive.google.com/file/d/1QDhe5yDQMp33YoribhUlR7wz3duv8qSz/view?usp=sharing')}
+            <a
+              href="https://drive.google.com/uc?export=download&id=1QDhe5yDQMp33YoribhUlR7wz3duv8qSz"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full py-3 2xl:py-3.5 px-4 rounded-xl font-semibold text-sm 2xl:text-base bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-600 text-slate-950 hover:text-white hover:from-cyan-400 hover:to-blue-500 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 transition-all duration-300 flex items-center justify-center gap-2 group/btn active:scale-95"
             >
               <FaDownload className="text-xs 2xl:text-sm group-hover/btn:-translate-y-0.5 transition-transform" />
               <span>Download Resume</span>
-            </button>
+            </a>
           </div>
         </aside>
 
