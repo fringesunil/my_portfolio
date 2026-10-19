@@ -137,7 +137,8 @@ function ProjectCard(props) {
             name: 'Equal POS',
             image: plusImage,
             description: 'Equal POS is a Windows-based billing software designed for efficient shop management. It enables easy creation of sales bills and sales return bills, supports counter closing, and integrates with thermal printers for seamless bill printing.',
-            uiImages: [posUI1, posUI2, posUI3, posUI4, posUI5, posUI6]
+            uiImages: [posUI1, posUI2, posUI3, posUI4, posUI5, posUI6],
+            playStore: 'https://play.google.com/store/apps/details?id=com.eqsoftonline.equal_pos_app&hl=en_IN'
         },
         {
             name: 'Relief',
