@@ -1,4 +1,5 @@
 import React from 'react';
+import profileImage from '../assets/pro.jpg';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import { FaLinkedin, FaGithub, FaTwitter, FaUser, FaBriefcase, FaCode, FaLayerGroup, FaEnvelope, FaDownload, FaPhoneAlt, FaEnvelopeOpen } from 'react-icons/fa';
 
@@ -33,7 +34,7 @@ function Root(props) {
           <div className="relative mb-5 mt-2">
             <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 opacity-60 blur-sm group-hover:opacity-100 transition duration-500"></div>
             <img
-              src="https://res.cloudinary.com/drinn62yk/image/upload/v1733654995/jd8boeeapl9yri8zqyuw.jpg"
+              src={profileImage}
               alt="Fringe Sunil"
               className="relative rounded-2xl w-28 h-28 sm:w-32 sm:h-32 2xl:w-36 2xl:h-36 object-cover border-2 border-slate-900 shadow-xl"
             />
