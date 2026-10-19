@@ -20,7 +20,7 @@ function ExperienceCard(props) {
         {
             role: "Senior Flutter Developer",
             company: "EQ Soft Business Solution Pvt Ltd",
-            period: "Jan 2024 — Apr 2026",
+            period: "January 2024 — April 2026",
             location: "Kochi, India",
             isCurrent: false,
             bullets: [
